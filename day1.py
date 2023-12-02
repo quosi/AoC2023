@@ -53,3 +53,12 @@ class Day1:
 
                 all_numbers.append(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
             return sum(all_numbers)
+
+    def get_results(self) -> [int, int]:
+        return self.day1_part1(), self.day1_part2()
+
+if __name__ == '__main__':
+    data = 'data/day1_input.txt'
+    d1 = Day1(data)
+    print(f'Day1 task1: {d1.day1_part1()}')  # 55834
+    print(f'Day1 task2: {d1.day1_part2()}')  # 53221
