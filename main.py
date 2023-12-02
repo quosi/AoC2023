@@ -3,27 +3,29 @@
 def processSnowCalibration(cal):
     with open(cal) as fp:
         all_numbers = []
-        str_numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+        str_numbers = {'one': 1,
+                       'two': 2,
+                       'three': 3,
+                       'four': 4,
+                       'five': 5,
+                       'six': 6,
+                       'seven': 7,
+                       'eight': 8,
+                       'nine': 9}
+
         for line in fp:
-            two_digit_nr = []
-            string_nr_dict = {}
-            int_nr_dict = {}
-            for nr in str_numbers:
+            nr_dict = {}
+            for nr in list(str_numbers.keys()):
                 if line.find(nr) >= 0:
-                    string_nr_dict[line.find(nr)] = nr
-                    # print(f'{nr} at ', line.find(nr))
-            print(string_nr_dict)
+                    nr_dict[line.find(nr)] = str_numbers[nr]
 
             for i, value in enumerate(line):
                 if is_int(value):
-                    two_digit_nr.append(int(value))
-                    int_nr_dict[i] = int(value)
-            if len(two_digit_nr) < 2:
-                two_digit_nr.append(two_digit_nr[0])
-            if len(two_digit_nr) > 2:
-                two_digit_nr = [two_digit_nr[0], two_digit_nr[-1]]
-            print(int_nr_dict)
-            all_numbers.append(int(str(two_digit_nr[0]) + str(two_digit_nr[1])))
+                    nr_dict[i] = int(value)
+            print(nr_dict)
+            print(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
+            all_numbers.append(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
+        print(all_numbers)
         print(sum(all_numbers))
 
 
@@ -36,4 +38,4 @@ def is_int(v):
 
 
 if __name__ == '__main__':
-    processSnowCalibration('day1_input.txt')
+    processSnowCalibration('day1_test_input.txt')
