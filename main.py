@@ -15,18 +15,22 @@ def processSnowCalibration(cal):
 
         for line in fp:
             nr_dict = {}
+
             for nr in list(str_numbers.keys()):
-                if line.find(nr) >= 0:
-                    nr_dict[line.find(nr)] = str_numbers[nr]
+
+                start_index = 0
+                for i in range(len(line)):
+                    j = line.find(nr, start_index)
+                    if (j != -1):
+                        nr_dict[j] = str_numbers[nr]
+                        start_index = j + 1
 
             for i, value in enumerate(line):
                 if is_int(value):
                     nr_dict[i] = int(value)
-            print(nr_dict)
-            print(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
+
             all_numbers.append(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
-        print(all_numbers)
-        print(sum(all_numbers))
+        return sum(all_numbers)
 
 
 def is_int(v):
@@ -38,4 +42,4 @@ def is_int(v):
 
 
 if __name__ == '__main__':
-    processSnowCalibration('day1_test_input.txt')
+    print('Day 1, part2: ', processSnowCalibration('day1_input.txt'))
