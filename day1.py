@@ -11,15 +11,13 @@ class Day1:
 
             for line in fp:
                 two_digit_nr = []
-                for i, value in enumerate(line):
-                    if self.is_int(value):
-                        two_digit_nr.append(int(value))
-                if len(two_digit_nr) < 2:
-                    two_digit_nr.append(two_digit_nr[0])
-                if len(two_digit_nr) > 2:
-                    two_digit_nr = [two_digit_nr[0], two_digit_nr[-1]]
-                all_numbers.append(int(str(two_digit_nr[0]) + str(two_digit_nr[1])))
-
+                for value in line:
+                    if value.isdigit():
+                        two_digit_nr.append(value)
+                if len(two_digit_nr) > 0:
+                    all_numbers.append(int(two_digit_nr[0] + two_digit_nr[-1]))
+                else:
+                    print('Input line contains no digits.')
             return sum(all_numbers)
 
     def day1_part2(self):
@@ -41,22 +39,18 @@ class Day1:
                 for nr in list(str_numbers.keys()):
 
                     start_index = 0
-                    for i in range(len(line)):
+                    #for i in range(len(line)):
+                    while start_index < len(line):
                         j = line.find(nr, start_index)
                         if (j != -1):
                             nr_dict[j] = str_numbers[nr]
                             start_index = j + 1
+                        else:
+                            start_index += 1
 
                 for i, value in enumerate(line):
-                    if self.is_int(value):
+                    if value.isdigit():
                         nr_dict[i] = int(value)
 
                 all_numbers.append(int(str(nr_dict[min(nr_dict.keys())]) + str(nr_dict[max(nr_dict.keys())])))
             return sum(all_numbers)
-
-    def is_int(self, v) -> bool:
-        try:
-            f = int(v)
-            return True
-        except:
-            return False
