@@ -7,9 +7,8 @@ Perfect time for some riddles to keep the brain and the laptop running. Time for
 To see all results run
 `python main.py`
 
-## Day1 [x]
+## Day1 ☑️
 + [solution in python](./day1.py)
 + [input data as txt file](./data/day1_input.txt)
 
-## Day2 ... coming up
-
+## Day2 ⌛️
