@@ -11,5 +11,5 @@ To see all results run
 + [solution in python](./day1.py)
 + [input data as txt file](./data/day1_input.txt)
 
-## Day2 ... waiting
+## Day2 ... coming up
 
