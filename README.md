@@ -10,7 +10,10 @@ To see all results run
 ## Day1 ☑
 + [Solution in python3](./day1.py)
 
-## Day2 👩‍💻
+## Day2 ☑
 + [Solution in python3](./day2.py)
 
-## Day3 ⌛️
+## Day3 👩‍💻
++ [Solution in python3](./day3.py)
+
+## Day4 ⌛️
