@@ -39,7 +39,6 @@ class Day1:
                 for nr in list(str_numbers.keys()):
 
                     start_index = 0
-                    #for i in range(len(line)):
                     while start_index < len(line):
                         j = line.find(nr, start_index)
                         if (j != -1):
