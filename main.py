@@ -1,5 +1,24 @@
 # This is the day 1 Advent of Code task as Python script.
 
+
+def day1_part1(cal):
+    with open(cal) as fp:
+        all_numbers = []
+
+        for line in fp:
+            two_digit_nr = []
+            for i, value in enumerate(line):
+                if is_int(value):
+                    two_digit_nr.append(int(value))
+            if len(two_digit_nr) < 2:
+                two_digit_nr.append(two_digit_nr[0])
+            if len(two_digit_nr) > 2:
+                two_digit_nr = [two_digit_nr[0], two_digit_nr[-1]]
+            all_numbers.append(int(str(two_digit_nr[0]) + str(two_digit_nr[1])))
+
+        return sum(all_numbers)
+
+
 def processSnowCalibration(cal):
     with open(cal) as fp:
         all_numbers = []
@@ -42,4 +61,5 @@ def is_int(v):
 
 
 if __name__ == '__main__':
-    print('Day 1, part2: ', processSnowCalibration('day1_input.txt'))
+    print('Day 1, part1: ', day1_part1('day1_input.txt')) # 55834
+    print('Day 1, part2: ', processSnowCalibration('day1_input.txt')) # 53221
