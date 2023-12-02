@@ -1,4 +1,3 @@
-
 class Day3:
 
     def __init__(self, data):
