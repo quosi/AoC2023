@@ -5,7 +5,12 @@ Perfect time for some riddles to keep the brain and the laptop running. Time for
 
 ## Results
 To see all results run
+
 `python main.py`
+
+To run all tests navigate to the main AoC2023 directory and run:
+
+`python -m pytest`
 
 ## Day1 ☑
 + [Solution in python3](./day1.py)
