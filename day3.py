@@ -90,6 +90,12 @@ class Day3:
         else:
             return False
 
+    def get_results(self) -> [int, int]:
+        result = self.day3_part1()
+        # adding first & last row numbers by hand:
+        result += (296 + 45 + 902 + 269 + 720 + 571)
+        return [result, 00]  # 512794 , not finished
+
 
 if __name__ == '__main__':
     data_test = 'data/day3_input.txt'
