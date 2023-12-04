@@ -21,7 +21,8 @@ To run all tests navigate to the main AoC2023 directory and run:
 ## Day3 👩‍💻
 + [Solution in python3](./day3.py)
 
-## Day4 👩‍💻
+## Day4 ☑
 + [Solution in python3](./day4.py)
 
-## Day4 ⌛️
+## Day5 ⌛️
++ [Solution in python3](./day5.py)

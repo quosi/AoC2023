@@ -25,12 +25,12 @@ class Day4:
             resulting_n.append(len(card_res))
         return resulting_n
 
-    def day4_part1(self):
+    def day4_part1(self) -> int:
         calc = [n for n in self.calc_win_cards() if n > 0]
         result = [2 ** (n - 1) for n in calc]
         return sum(result)
 
-    def day4_part2(self):
+    def day4_part2(self) -> int:
         resulting_wins = self.calc_win_cards()
         num_cards = [1] * len(resulting_wins) + [0]
 
@@ -52,6 +52,6 @@ if __name__ == '__main__':
     data_ = 'data/day4_input.txt'
     d4 = Day4(data_)
     r = d4.day4_part1()
-    # assert r == 13 # test result || real result r == 18653
+    # assert r == 13 # test result
     w = d4.day4_part2()
-    print(r, w)  # r = 5921508
+    print(r, w)
