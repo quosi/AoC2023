@@ -19,7 +19,7 @@ if __name__ == '__main__':
     d1 = Day1('data/day1_input.txt')
     d2 = Day2('data/day2_input.txt')
     d3 = Day3('data/day3_input.txt')
-    d2 = Day4('data/day4_input.txt')
+    d4 = Day4('data/day4_input.txt')
     games = d2.count_cubes()
     load = {'red': 12, 'green': 13, 'blue': 14}
     data = [d1, d2, d3, d4]
